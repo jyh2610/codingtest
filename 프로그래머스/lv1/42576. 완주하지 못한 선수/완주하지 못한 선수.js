@@ -1,12 +1,21 @@
 function solution(participant, completion) {
-  participant.sort();
-  completion.sort();
+    const participantObj = {}
 
-  for (let i = 0; i < participant.length; i++) {
-    if (participant[i] !== completion[i]) {
-      return participant[i];
-    }
-  }
+    participant.forEach(human=>{
+        if(participantObj[human] === undefined){
+            participantObj[human] = 1
+        }
+        else{
+            participantObj[human]++
+        }
+    })
 
-  return participant[participant.length - 1];
+    completion.forEach(human=>{
+        participantObj[human]--
+        if(participantObj[human] === 0)
+            delete participantObj[human]
+    })
+
+    const answer = Object.keys(participantObj)[0]
+    return answer;
 }
