@@ -4,7 +4,7 @@ function solution(citations) {
     for(let h=0;h<=10000;h++){
         let moreThanHCount = 0, lessThanHCount = 0
        
-        citations.forEach(citation=>{ 
+        citations.map(citation=>{ 
             if(citation < h){
                 lessThanHCount++
             }
