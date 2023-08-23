@@ -11,7 +11,8 @@ function solution(s) {
         })
  
     })
-const result = arr.map(subArray => subArray.join("")).join(" ");
+   
+const result = arr.map(item => item.join("")).join(" ");
 
 return result
 }
